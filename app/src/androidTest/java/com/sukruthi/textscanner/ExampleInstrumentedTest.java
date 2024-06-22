@@ -1,4 +1,4 @@
-package com.aniketjain.textscanner;
+package com.sukruthi.textscanner;
 
 import android.content.Context;
 

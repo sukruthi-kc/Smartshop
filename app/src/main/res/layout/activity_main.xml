@@ -3,75 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainBGColor"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/buttons_LL"
-        android:layout_alignParentTop="true"
-        android:layout_margin="8dp">
-
-        <TextView
-            android:id="@+id/data_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_m"
-            android:lineSpacingExtra="2dp"
-            android:text="Capture or choose an image from gallery to scanner the text from the picture."
-            android:textColor="@color/textColor"
-            android:textSize="19sp"
-            tools:ignore="HardcodedText" />
-    </ScrollView>
-
     <LinearLayout
-        android:id="@+id/buttons_LL"
+        android:id="@+id/budgetEntryLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginBottom="12dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/budgetEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter Budget"
+            android:inputType="numberDecimal" />
 
         <Button
-            android:id="@+id/capture_btn"
-            style="@style/Theme.AppCompat"
-            android:layout_width="0dp"
+            android:id="@+id/submitBudgetButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_bg"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/inter_m"
-            android:foreground="?attr/selectableItemBackground"
-            android:letterSpacing="0.1"
-            android:text="Capture"
-            android:textAllCaps="false"
-            android:textColor="@color/textColor"
-            android:textSize="15sp"
-            tools:ignore="HardcodedText,UnusedAttribute" />
+            android:text="Submit" />
 
-        <Button
-            android:id="@+id/copy_btn"
-            style="@style/Theme.AppCompat"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_bg"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/inter_m"
-            android:foreground="?attr/selectableItemBackground"
-            android:letterSpacing="0.1"
-            android:text="Copy Text"
-            android:textAllCaps="false"
-            android:textColor="@color/textColor"
-            android:textSize="15sp"
-            android:visibility="gone"
-            tools:ignore="HardcodedText,UnusedAttribute" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/captureBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/budgetEntryLayout"
+        android:text="Capture Image" />
+
+    <Button
+        android:id="@+id/copyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captureBtn"
+        android:text="Copy Text" />
+
+    <Button
+        android:id="@+id/addCreditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/copyBtn"
+        android:text="Add Credit" />
+
+    <TextView
+        android:id="@+id/cartTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addCreditButton"
+        android:text="Cart: $0.00"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/scannedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cartTextView"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        android:text="Scanned text will appear here"
+        android:textSize="16sp" />
+
 </RelativeLayout>
+
+
